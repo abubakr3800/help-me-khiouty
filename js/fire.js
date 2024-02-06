@@ -9,6 +9,12 @@ class AllUsers{
     classDate;
 }
 var allUsersArr = [];
+class eachClass{
+    id;
+    class;
+    code;
+    count;
+}
 var classDates = [];
 
 
@@ -21,7 +27,14 @@ function countUsersOnDB() {
     // }
         snapshot.docs.forEach(doc=>{
             // console.log(doc.data());
-            classDates.push(doc.data());
+            var eachc = new eachClass() ;
+            eachc.id = doc.id;
+            eachc.class = doc.data()['class'];
+            eachc.code = doc.data()['code'];
+            eachc.count = doc.data()['count'];
+            // console.log(eachc);
+            // console.log('each' + eachc);
+            classDates.push(eachc);
         })
     console.log(classDates);
     });
@@ -44,6 +57,20 @@ function countUsersOnDB() {
 
 }
 
+function countCounter( date ) {
+    // console.log(date);
+    var c;
+    classDates.forEach(e => {
+        // console.log(e.class);
+        // console.log(e.count);
+        // console.log(e.class == date);
+        if(e.class == date){
+            console.log(e.count);
+            c = e.count;
+        }
+    });
+    return c;
+}
 
 var coun;
 function countResDate(Arr , date) {
@@ -154,7 +181,8 @@ selections.onchange = function() {
 function classAppoint(content , id , stlim) {
     var appointCount = 0;
     console.log( "studentlimit: " + stlim);
-    if (countResDate(allUsersArr , content) < Number(stlim)) {        
+    // if (countResDate(allUsersArr , content) < Number(stlim)) {        
+    if (countCounter(content) < Number(stlim)) {        
         appointChild = document.createElement("option");
         appointChild.setAttribute("value" , content);
         console.log(countResDate(allUsersArr , content));
