@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://google.com" target="_blank" id="myElement">Click me!</a>
+    <div class="view-stat"></div>
+<script>
+var elementIsClicked = false; // declare the variable that tracks the state
+function clickHandler(){ // declare a function that updates the state
+elementIsClicked = true;
+document.querySelector("body > div.view-stat").innerHTML = elementIsClicked;
+}
+
+var element = document.getElementById('myElement');
+document.getElementById("myElement").addEventListener("click", function () {
+    clickHandler();
+});
+</script>
+
+</body>
+</html>

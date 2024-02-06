@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ar">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>first test asmaa's project</title>
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet" > -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body class="bg-dark">
+
+    <main class="container">
+      <div class="row">
+        <div class="col text-right" id="data-req" dir="rtl">
+          <form action="php/insert.php" method="post" class="login w-100" id="data-form">
+            <h1 class="text-center mb-5 pb-3"> برجاء ملئ بياناتك كاملة والاحتفاظ بالكود النهائي</h1>
+              
+              <div class="mb-3">
+                <span class="form-label" id="basic-addon3">اسم الطالب</span>
+                <input type="text" minlength="10" name="stname" required class="form-control" id="basic-url" aria-describedby="basic-addon3">
+              </div>
+              <div class="mb-3">
+                <span class="form-label" id="basic-addon3">  رقم هاتف الطالب ( يرجي أن يكون عليه واتساب)</span>
+                <input type="text" pattern="[0-9]{11}" name="stphone" required class="form-control" id="basic-url" aria-describedby="basic-addon3">
+              </div>
+              <div class="mb-3">
+                <span class="form-label" id="basic-addon3">رقم هاتف ولي الأمر ( يرجي أن يكون عليه واتساب)</span>
+                <!-- <a href="https://t.me/abobakr143"></a> -->
+                <input type="text" pattern="[0-9]{11}" name="dadphone" required class="form-control" id="basic-url" aria-describedby="basic-addon3">
+              </div>
+              <div class="mb-3">
+                <span class="form-label" id="basic-addon3">المدرسة التي بها الطالب حاليا</span>
+                <input type="text" name="school" required class="form-control" id="basic-url" aria-describedby="basic-addon3">
+              </div>
+              <div class="mb-3">
+                <span class="form-label" id="basic-addon1">الصف الدراسي</span>
+                <!-- <input type="text" name="firstname" required class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"> -->
+                <select class="form-select form-control form-control-lg" aria-label="Default select example" id="classnum" name="classroom">
+                  <option value="">اختر الصف</option>
+                </select>
+              </div>
+              <div class="mb-3" id="appoint-time"></div>
+             <div class="mb-3" id="link-holder"></div>
+             <div class="mb-3" id="submit-holder"></div>
+          </form>
+
+        </div>
+      </div>
+    </main>
+
+      <!-- Button trigger modal -->
+      <button type="button" id="nonfound" class="btn btn-primary" style="display: none;" data-toggle="modal" data-target="#exampleModalCenter">
+        Launch demo modal
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body p-5 text-center">
+              ناسف لقد تم الحجز بالفعل
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    <script src="js/script.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-auth.js"></script>
+    <!-- <script src="js/md5.min.js"></script> -->
+    <script type="" src="js/conf.js"></script>
+    <script type="" src="js/fire.js"></script>
+    <script type="" src="js/recording.js"></script>
+    <!-- <script type="" src="js/newfire.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="js/popper.min.js"></script> -->
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+
+
+  </body>
+</html>
